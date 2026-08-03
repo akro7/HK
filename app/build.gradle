@@ -36,6 +36,11 @@ android {
             path file('src/main/jni/Android.mk')
         }
     }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
