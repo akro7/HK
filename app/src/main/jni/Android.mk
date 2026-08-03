@@ -42,6 +42,6 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external/curl/curl-android-$(TARGET_ARCH_ABI)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external/curl/openssl-android-$(TARGET_ARCH_ABI)/include
 
-LOCAL_LDLIBS := -landroid -lGLESv3 -lEGL -ldl -llog -lz
+LOCAL_LDLIBS := -landroid -lGLESv3 -lEGL -ldl -llog -lz -latomic
 LOCAL_STATIC_LIBRARIES := libcurl libssl libcrypto
 include $(BUILD_SHARED_LIBRARY)
