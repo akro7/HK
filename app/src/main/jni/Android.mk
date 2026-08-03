@@ -35,13 +35,19 @@ LOCAL_SRC_FILES := main.cpp \
     include/external/Substrate/SubstratePosixMemory.cpp \
     include/external/And64InlineHook/And64InlineHook.cpp \
     include/external/xhook/xhook.c \
-    include/external/oxorany/oxorany.cpp
+    include/external/oxorany/oxorany.cpp \
+    atomic_compat.c
+
+ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
+LOCAL_CFLAGS += -march=armv7-a -mfpu=neon
+LOCAL_CPPFLAGS += -march=armv7-a -mfpu=neon
+endif
 
 LOCAL_C_INCLUDES := $(NDK_ROOT)/sources/android
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external/curl/curl-android-$(TARGET_ARCH_ABI)/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include/external/curl/openssl-android-$(TARGET_ARCH_ABI)/include
 
-LOCAL_LDLIBS := -landroid -lGLESv3 -lEGL -ldl -llog -lz -latomic
+LOCAL_LDLIBS := -landroid -lGLESv3 -lEGL -ldl -llog -lz
 LOCAL_STATIC_LIBRARIES := libcurl libssl libcrypto
 include $(BUILD_SHARED_LIBRARY)
