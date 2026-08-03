@@ -35,10 +35,10 @@ LOCAL_SRC_FILES := main.cpp \
     include/external/Substrate/SubstratePosixMemory.cpp \
     include/external/And64InlineHook/And64InlineHook.cpp \
     include/external/xhook/xhook.c \
-    include/external/oxorany/oxorany.cpp \
-    atomic_compat.c
+    include/external/oxorany/oxorany.cpp
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
+LOCAL_SRC_FILES += atomic_compat.c
 LOCAL_CFLAGS += -march=armv7-a -mfpu=neon
 LOCAL_CPPFLAGS += -march=armv7-a -mfpu=neon
 endif
