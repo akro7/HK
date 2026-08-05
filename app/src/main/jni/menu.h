@@ -1261,7 +1261,7 @@ static void DrawContentArea(float winW, float winH) {
         if (g_ArialBlackFont) PushFont(g_ArialBlackFont);
         SetWindowFontScale(1.4f);
         ImVec2 textP = ImVec2(p.x + paddingX, textY);
-        dl2->AddText(textP, IM_COL32(160, 40, 210, 255), O("AKRO GOXI"));
+        dl2->AddText(textP, IM_COL32(160, 40, 210, 255), O("NovaCore Mod"));
         SetWindowFontScale(1.0f);
         if (g_ArialBlackFont) PopFont();
 
@@ -1827,7 +1827,7 @@ static void DrawContentArea(float winW, float winH) {
                 DrawInfoRow(O("Model:  "), s_model, green);
                 DrawInfoRow(O("ABI:    "), s_abi, yellow);
                 DrawInfoRow(O("Game:   "), O("8ball pool 56.26.2"), red);
-                DrawInfoRow(O("Type:   "), O("AKRO GOXI Mode"), red);
+                DrawInfoRow(O("Type:   "), O("NovaCore Mode"), red);
                 Dummy(ImVec2(0, 5));
             }
 
@@ -2322,7 +2322,7 @@ INLINE void DrawUpdateRequired(ImGuiIO& io) {
     std::string p2 = O("APK");
     std::string p3 = O(" file");
     std::string line2Text = O("please click the button below and download");
-    std::string enjoyText = O("Enjoy AKRO GOXI");
+    std::string enjoyText = O("Enjoy NovaCore Mod");
 
     float w1 = CalcTextSize(p1.c_str()).x;
     float w2 = CalcTextSize(p2.c_str()).x;
@@ -2473,10 +2473,10 @@ INLINE void DrawLogin(ImGuiIO& io) {
     if (g_ArialBlackFont) PushFont(g_ArialBlackFont);
     SetCursorPosY(cardH * 0.085f);
     SetWindowFontScale(1.7f);
-    ImVec2 titleSize = CalcTextSize(O("AKRO GOXI v1"));
+    ImVec2 titleSize = CalcTextSize(O("NovaCore Mod"));
     SetCursorPosX((cardW - titleSize.x) * 0.5f);
     
-    TextColored(ImVec4(0.63f, 0.16f, 0.82f, 1.0f), O("AKRO GOXI v1"));
+    TextColored(ImVec4(0.63f, 0.16f, 0.82f, 1.0f), O("NovaCore Mod"));
     
     SetWindowFontScale(1.0f);
     if (g_ArialBlackFont) PopFont();
